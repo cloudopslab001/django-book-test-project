@@ -10,8 +10,3 @@ class BookForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
         }
-
-class UpdateBookForm(forms.ModelForm):
-    class Meta:
-        model = Book
-        fields = ["title", "description", "author", "creator"]
