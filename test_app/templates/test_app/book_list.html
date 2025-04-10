@@ -1,0 +1,22 @@
+<!-- test_app/templates/test_app/top_page.html -->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>トップページ</title>
+    </head>
+    <body>
+        <h1>ようこそ、トップページへ！</h1>
+
+        {% for book in books %}
+            <li>タイトル：{{ book.title }}</li>
+            <li>本の説明：{{ book.description }}</li>
+            <li>著者：{{ book.author }}</li>
+            <li>記事の作成者：{{ book.creator }} <a href="{% url 'update_book' book.id %}">編集</a> <a href="{% url 'delete_book' book.id %}">削除</a></li>
+            <br>
+
+        {% endfor %}
+
+        <a href="{% url 'add_book' %}">新しい本を追加</a>
+    </body>
+</html>

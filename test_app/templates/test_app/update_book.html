@@ -1,0 +1,11 @@
+<h1>{{ book.title }}を編集</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>本のタイトル <br>{{ form.title }}</div><br>
+  <div>本の説明 <br>{{ form.description }}</div><br>
+  <div>著者 <br>{{ form.author }}</div><br>
+  <div>記事の作成者 <br>{{ form.creator }}</div><br>
+
+  <button type="submit">変更する</button>
+</form>
